@@ -1,0 +1,16 @@
+{application, record_info,
+  [{description,
+    "Erlang Record to Proplist and back."},
+   {vsn, "0.1"},
+   {modules,
+    []},
+   {registered,
+    []},
+
+   {applications,
+    [kernel,
+     stdlib]},
+   {mod,
+    {record_info, []}}
+  ]}.
+

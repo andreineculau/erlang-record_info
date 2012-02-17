@@ -2,10 +2,10 @@
 % test.
 % ----------------------------------------------------------------------------
 -module(test).
--export([main/0]).
--export([test/0]).
 -include("test.hrl").
--include("record_info.hrl").
+-include_lib("record_info.hrl").
+-include_lib("eunit/include/eunit.hrl").
+-compile([export_all]).
 -import(record_info, [record_to_proplist/2]).
 -import(record_info, [proplist_to_record/3]).
 -export_record_info([rec]).
@@ -20,14 +20,8 @@
   a = 1 :: integer()
 }).
 
--spec main() -> ok.
-main() ->
-  test(),
-  init:stop(),
-  ok.
-
--spec test() -> ok.
-test() -> 
+-spec run_test() -> ok.
+run_test() -> 
   plan(12),
 
   R1 = #rec{a = 3, b = 4},
