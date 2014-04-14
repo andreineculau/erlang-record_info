@@ -404,7 +404,10 @@ form_encode(Form, LineNo) when is_atom(Form) ->
   {atom, LineNo, Form};
 
 form_encode(Form, LineNo) when is_integer(Form) ->
-  {integer, LineNo, Form}.
+  {integer, LineNo, Form};
+
+form_encode(Form, LineNo) when is_float(Form) ->
+  {float, LineNo, Form}.
 
 is_string(Text) ->
   lists:all(fun(E) -> is_integer(E) andalso E >= 0 andalso E < 128 end, Text).
